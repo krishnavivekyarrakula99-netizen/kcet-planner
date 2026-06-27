@@ -5,14 +5,10 @@
 [build.environment]
   NODE_VERSION = "18"
   NPM_FLAGS = "--legacy-peer-deps"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
-# Handle client-side routing for /results page
+# SPA-style routing: serve index.html for all routes
 [[redirects]]
-  from = "/results"
-  to   = "/results/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/*"
-  to   = "/index.html"
+  from   = "/*"
+  to     = "/index.html"
   status = 200
